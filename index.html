@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Splitter</title>
+
+		<link rel="stylesheet" href="style.css" />
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div class="main-title">
+			<h1>spli</h1>
+			<h1>tter</h1>
+		</div>
+
+		<section id="wrapper">
+			<article id="left">
+				<div id="bill">
+					<label>
+						Bill
+						<input type="number" min="0" max="100000" required id="billInput" />
+					</label>
+				</div>
+
+				<div class="tip">
+					<label>Select Tip %</label>
+					<button id="five">5%</button>
+					<button id="ten">10%</button>
+					<button id="fifteen">15%</button>
+					<button id="twentyfive">25%</button>
+					<button id="fifty">50%</button>
+					<input
+						type="number"
+						id="custom"
+						min="0"
+						max="100"
+						placeholder="Custom"
+					/>
+				</div>
+
+				<div class="people">
+					<label>
+						Number of People
+						<input type="number" id="numOfPeople" />
+					</label>
+				</div>
+			</article>
+
+			<article id="right">
+				<div class="tipAmount">
+					<div class="textWrap">
+						<h2>Tip amount</h2>
+						<p>/ person</p>
+					</div>
+					<p>$0.00</p>
+				</div>
+
+				<div class="totalTip">
+					<div class="textWrap">
+						<h2>Total</h2>
+						<p>/ person</p>
+					</div>
+					<p>$0.00</p>
+				</div>
+
+				<button>Reset</button>
+			</article>
+		</section>
+	</body>
+</html>

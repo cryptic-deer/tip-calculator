@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+	--color-primary: hsl(172, 67%, 45%);
+
+	--color-dark-cyan: hsl(183, 100%, 15%);
+	--color-dark-gray-cyan: hsl(186, 14%, 43%);
+	--color-gray-cyan: hsl(184, 14%, 56%);
+	--color-light-gray-cyan: hsl(185, 41%, 84%);
+	--color-light-cyan: hsl(189, 41%, 97%);
+}
+
+html,
+h1,
+h2,
+p,
+input {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Space Mono", monospace;
+	font-size: 24px;
+	background-color: var(--color-light-gray-cyan);
+}
+
+.main-title {
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--color-dark-gray-cyan);
+	letter-spacing: 7px;
+	font-size: 0.75rem;
+	margin-top: 13vh;
+}
+
+#wrapper {
+	background-color: white;
+	border-radius: 20px;
+	display: flex;
+	padding: 30px;
+	width: 60vw;
+	margin: 7vh auto;
+}
+
+#left {
+	display: flex;
+	flex-direction: column;
+	margin-right: 30px;
+}
+#left label {
+	display: flex;
+	flex-direction: column;
+}
+
+#right {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-dark-cyan);
+	padding: 30px;
+	border-radius: 20px;
+}
+.textWrap {
+	font-size: 0.6rem;
+	color: white;
+	white-space: nowrap;
+}
+
+.textWrap p {
+	opacity: 0.8;
+}
+
+.textWrap ~ p {
+	color: var(--color-primary);
+	padding-left: 75px;
+	padding-bottom: 40px;
+	font-size: 2rem;
+	line-height: 2rem;
+	font-weight: 700;
+}
+
+#right > * {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/* Removing arrows from input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+/* End of removing */
