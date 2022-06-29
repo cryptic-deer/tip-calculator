@@ -14,13 +14,15 @@ html,
 h1,
 h2,
 p,
-input {
+input,
+button {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+	font-family: "Space Mono", monospace;
+	font-weight: 700;
 }
 body {
-	font-family: "Space Mono", monospace;
 	font-size: 24px;
 	background-color: var(--color-light-gray-cyan);
 }
@@ -38,7 +40,7 @@ body {
 	background-color: white;
 	border-radius: 20px;
 	display: flex;
-	padding: 30px;
+	padding: 25px;
 	width: 60vw;
 	margin: 7vh auto;
 }
@@ -51,11 +53,50 @@ body {
 #left label {
 	display: flex;
 	flex-direction: column;
+	font-size: 0.75rem;
+	color: var(--color-dark-gray-cyan);
+	line-height: 1.5rem;
+}
+#left > div {
+	margin: 10px 0 20px;
+}
+
+.tip.buttons {
+	margin-top: 3px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.tip button {
+	width: 85px;
+	background-color: var(--color-dark-cyan);
+	border: none;
+	border-radius: 5px;
+	padding: 5px 15px;
+	color: white;
+	font-size: 1rem;
+	margin-bottom: 5px;
+}
+
+.tip input {
+	width: 85px;
+	padding: 5px 15px;
+	font-size: 0.9rem;
+	color: var(--color-dark-cyan);
+	margin-top: 3px;
+}
+
+input {
+	background-color: var(--color-light-cyan);
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	padding: 4px;
 }
 
 #right {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	background-color: var(--color-dark-cyan);
 	padding: 30px;
 	border-radius: 20px;
@@ -66,8 +107,8 @@ body {
 	white-space: nowrap;
 }
 
-.textWrap p {
-	opacity: 0.8;
+.textWrap > p {
+	color: var(--color-light-gray-cyan);
 }
 
 .textWrap ~ p {
@@ -76,13 +117,27 @@ body {
 	padding-bottom: 40px;
 	font-size: 2rem;
 	line-height: 2rem;
-	font-weight: 700;
 }
 
-#right > * {
+.tipAmount,
+.totalTip {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	height: 4rem;
+	line-height: 1.2rem;
+}
+
+#resetBtn {
+	background-color: var(--color-primary);
+	opacity: 0.5;
+	border: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+	padding: 7px;
+	color: var(--color-dark-cyan);
+	box-shadow: 0 0 20px 5px #3f3f3f;
+	cursor: pointer;
 }
 
 /* Removing arrows from input */
