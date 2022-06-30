@@ -23,12 +23,13 @@
 						<label>
 							Bill
 							<input
-								type="number"
+								type="text"
+								pattern="\d*"
 								min="0"
 								max="100000"
+								maxlength="6"
 								id="billInput"
 								placeholder="0"
-								defaultValue="0"
 							/>
 							<p class="dollar">$</p>
 						</label>
@@ -43,10 +44,12 @@
 							<input type="button" class="percent" value="25%" />
 							<input type="button" class="percent" value="50%" />
 							<input
-								type="number"
+								type="text"
+								pattern="\d*"
 								id="custom"
 								min="0"
 								max="100"
+								maxlength="3"
 								placeholder="Custom"
 							/>
 						</div>
@@ -56,12 +59,13 @@
 						<label>
 							Number of People
 							<input
-								type="number"
+								type="text"
+								pattern="\d*"
 								id="numOfPeople"
 								min="1"
-								max="200"
+								max="500"
+								maxlength="3"
 								placeholder="0"
-								defaultValue="0"
 							/>
 							<img src="user.png" alt="men icon" class="icon" />
 						</label>

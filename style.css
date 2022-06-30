@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 
+/** General */
 :root {
 	--color-primary: hsl(172, 67%, 45%);
 
@@ -7,7 +8,7 @@
 	--color-dark-gray-cyan: hsl(186, 14%, 43%);
 	--color-gray-cyan: hsl(184, 14%, 56%);
 	--color-light-gray-cyan: hsl(185, 41%, 84%);
-	--color-light-cyan: hsl(189, 41%, 97%);
+	--color-light-cyan: hsl(180, 16%, 89%);
 }
 
 html,
@@ -27,8 +28,10 @@ body {
 	background-color: var(--color-light-gray-cyan);
 }
 
+/*End of General */
+
+/** Main Containers */
 .container {
-	margin: 0;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -53,7 +56,9 @@ body {
 	padding: 25px;
 	max-width: 65vw;
 }
+/* End of Main Containers */
 
+/** Left Side */
 #left {
 	display: flex;
 	flex-direction: column;
@@ -70,6 +75,7 @@ body {
 	margin: 10px 0 20px;
 }
 
+/*? Tip amount buttons */
 .tip .buttons {
 	margin-top: 3px;
 	display: flex;
@@ -89,15 +95,14 @@ body {
 	text-align: center;
 }
 
-.tip .percent:hover,
-.tip .percent:active {
+.tip .percent:hover {
+	background-color: var(--color-primary);
+}
+.tip .percent:focus {
 	background-color: var(--color-primary);
 }
 
-.active {
-	background-color: var(--color-primary);
-}
-
+/*? Number inputs */
 .tip input {
 	width: 100px;
 	height: 43px;
@@ -119,7 +124,9 @@ input {
 input:focus {
 	outline-color: var(--color-dark-cyan);
 }
+/* End of Left Side */
 
+/** Right Side */
 #right {
 	display: flex;
 	flex-direction: column;
@@ -161,6 +168,7 @@ input:focus {
 	overflow: hidden;
 }
 
+/*? Reset button */
 #resetBtn {
 	background-color: var(--color-primary);
 	opacity: 0.5;
@@ -178,6 +186,9 @@ input:focus {
 	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
+/* End of Right Side */
+
+/** Miscellaneous */
 .dollar {
 	position: relative;
 	bottom: 2.15rem;
@@ -186,6 +197,7 @@ input:focus {
 	color: var(--color-gray-cyan);
 	font-weight: 100;
 }
+
 ::placeholder {
 	color: var(--color-gray-cyan);
 }
@@ -199,7 +211,8 @@ input:focus {
 	padding: 5px 10px;
 }
 
-/* Removing arrows from input */
+/** Removing arrows from input */
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -213,7 +226,12 @@ input[type="number"] {
 }
 /* End of removing */
 
-@media screen and (max-width: 856px) {
+/* End of Miscellaneous */
+
+/** Responsive */
+
+/*? Tablet */
+@media screen and (max-width: 1024px) {
 	.container {
 		transform: translate(-50%, -50%);
 	}
@@ -226,9 +244,10 @@ input[type="number"] {
 	}
 }
 
-@media screen and (max-width: 414px) {
+/*? Mobile */
+@media screen and (max-width: 656px) {
 	.container {
-		transform: translate(-50%, -45%);
+		transform: translate(-50%, -85%);
 	}
 
 	#wrapper {
@@ -247,6 +266,7 @@ input[type="number"] {
 	}
 	#left label {
 		height: 30px;
+		margin-bottom: 10px;
 	}
 	.main-title {
 		margin-bottom: 15px;
@@ -256,6 +276,10 @@ input[type="number"] {
 	}
 	.tip input {
 		width: 47%;
-		padding-right: 45px;
+	}
+	.tipAmount,
+	.totalTip {
+		max-width: 475px;
 	}
 }
+/* End of Responsive */
