@@ -27,13 +27,22 @@ body {
 	background-color: var(--color-light-gray-cyan);
 }
 
+.container {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -70%);
+	max-width: 719px;
+}
 .main-title {
 	text-align: center;
 	text-transform: uppercase;
 	color: var(--color-dark-gray-cyan);
 	letter-spacing: 7px;
 	font-size: 0.75rem;
-	margin-top: 13vh;
+	margin-bottom: 50px;
 }
 
 #wrapper {
@@ -41,8 +50,7 @@ body {
 	border-radius: 20px;
 	display: flex;
 	padding: 25px;
-	width: 60vw;
-	margin: 7vh auto;
+	max-width: 65vw;
 }
 
 #left {
@@ -53,7 +61,7 @@ body {
 #left label {
 	display: flex;
 	flex-direction: column;
-	font-size: 0.75rem;
+	font-size: 0.8rem;
 	color: var(--color-dark-gray-cyan);
 	line-height: 1.5rem;
 }
@@ -61,26 +69,34 @@ body {
 	margin: 10px 0 20px;
 }
 
-.tip.buttons {
+.tip .buttons {
 	margin-top: 3px;
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .tip button {
-	width: 85px;
+	width: 100px;
 	background-color: var(--color-dark-cyan);
 	border: none;
 	border-radius: 5px;
-	padding: 5px 15px;
+	padding: 7px 15px;
 	color: white;
-	font-size: 1rem;
-	margin-bottom: 5px;
+	font-size: 1.25rem;
+	margin-bottom: 15px;
+	cursor: pointer;
+}
+
+.tip button:hover,
+.tip button:active {
+	background-color: var(--color-primary);
 }
 
 .tip input {
-	width: 85px;
-	padding: 5px 15px;
-	font-size: 0.9rem;
+	width: 100px;
+	height: 43px;
+	padding: 5px 20px 5px 0;
+	font-size: 1.05rem;
 	color: var(--color-dark-cyan);
 	margin-top: 3px;
 }
@@ -89,8 +105,13 @@ input {
 	background-color: var(--color-light-cyan);
 	border: none;
 	border-radius: 5px;
-	font-size: 1rem;
-	padding: 4px;
+	font-size: 1.1rem;
+	padding: 5px 10px;
+	color: var(--color-dark-cyan);
+	text-align: right;
+}
+input:focus {
+	outline-color: var(--color-dark-cyan);
 }
 
 #right {
@@ -130,7 +151,7 @@ input {
 
 #resetBtn {
 	background-color: var(--color-primary);
-	opacity: 0.5;
+	opacity: 0.3;
 	border: none;
 	border-radius: 5px;
 	text-transform: uppercase;
@@ -138,6 +159,27 @@ input {
 	color: var(--color-dark-cyan);
 	box-shadow: 0 0 20px 5px #3f3f3f;
 	cursor: pointer;
+}
+
+.dollar {
+	position: relative;
+	bottom: 2.15rem;
+	font-size: 1.25rem;
+	padding: 5px 10px;
+	color: var(--color-gray-cyan);
+	font-weight: 100;
+}
+::placeholder {
+	color: var(--color-gray-cyan);
+}
+
+.icon {
+	position: relative;
+	bottom: 1.9rem;
+	width: 1rem;
+	height: auto;
+	opacity: 0.3;
+	padding: 5px 10px;
 }
 
 /* Removing arrows from input */
@@ -153,3 +195,50 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 /* End of removing */
+
+@media screen and (max-width: 856px) {
+	.container {
+		transform: translate(-50%, -50%);
+	}
+
+	#wrapper {
+		max-width: 90vw;
+	}
+	.tip .buttons {
+		justify-content: space-evenly;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.container {
+		transform: translate(-50%, -45%);
+	}
+
+	#wrapper {
+		flex-direction: column;
+		max-width: 86vw;
+		margin: 0;
+	}
+	.tip .buttons {
+		justify-content: space-between;
+	}
+	.tip button {
+		width: 47%;
+	}
+	#left {
+		margin-right: 0;
+	}
+	#left label {
+		height: 30px;
+	}
+	.main-title {
+		margin-bottom: 15px;
+	}
+	#right {
+		margin-top: 30px;
+	}
+	.tip input {
+		width: 47%;
+		padding-right: 45px;
+	}
+}
