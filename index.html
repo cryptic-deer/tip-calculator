@@ -8,7 +8,7 @@
 		<title>Splitter</title>
 
 		<link rel="stylesheet" href="style.css" />
-		<script src="script.js"></script>
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<div class="container">
@@ -26,9 +26,9 @@
 								type="number"
 								min="0"
 								max="100000"
-								required
 								id="billInput"
 								placeholder="0"
+								defaultValue="0"
 							/>
 							<p class="dollar">$</p>
 						</label>
@@ -37,11 +37,11 @@
 					<div class="tip">
 						<label>Select Tip %</label>
 						<div class="buttons">
-							<button id="five">5%</button>
-							<button id="ten">10%</button>
-							<button id="fifteen">15%</button>
-							<button id="twentyfive">25%</button>
-							<button id="fifty">50%</button>
+							<input type="button" class="percent" value="5%" />
+							<input type="button" class="percent" value="10%" />
+							<input type="button" class="percent" value="15%" />
+							<input type="button" class="percent" value="25%" />
+							<input type="button" class="percent" value="50%" />
 							<input
 								type="number"
 								id="custom"
@@ -61,6 +61,7 @@
 								min="1"
 								max="200"
 								placeholder="0"
+								defaultValue="0"
 							/>
 							<img src="user.png" alt="men icon" class="icon" />
 						</label>

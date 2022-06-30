@@ -35,6 +35,7 @@ body {
 	margin-right: -50%;
 	transform: translate(-50%, -70%);
 	max-width: 719px;
+	height: 55vh;
 }
 .main-title {
 	text-align: center;
@@ -75,7 +76,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-.tip button {
+.tip .percent {
 	width: 100px;
 	background-color: var(--color-dark-cyan);
 	border: none;
@@ -85,20 +86,25 @@ body {
 	font-size: 1.25rem;
 	margin-bottom: 15px;
 	cursor: pointer;
+	text-align: center;
 }
 
-.tip button:hover,
-.tip button:active {
+.tip .percent:hover,
+.tip .percent:active {
+	background-color: var(--color-primary);
+}
+
+.active {
 	background-color: var(--color-primary);
 }
 
 .tip input {
 	width: 100px;
 	height: 43px;
-	padding: 5px 20px 5px 0;
 	font-size: 1.05rem;
 	color: var(--color-dark-cyan);
 	margin-top: 3px;
+	text-align: center;
 }
 
 input {
@@ -147,18 +153,29 @@ input:focus {
 	justify-content: space-between;
 	height: 4rem;
 	line-height: 1.2rem;
+	max-width: 261px;
+}
+
+.tipAmount > p,
+.totalTip > p {
+	overflow: hidden;
 }
 
 #resetBtn {
 	background-color: var(--color-primary);
-	opacity: 0.3;
+	opacity: 0.5;
 	border: none;
 	border-radius: 5px;
 	text-transform: uppercase;
 	padding: 7px;
 	color: var(--color-dark-cyan);
-	box-shadow: 0 0 20px 5px #3f3f3f;
+
 	cursor: pointer;
+}
+#resetBtn:hover {
+	opacity: 1;
+	transform: translateY(-1px);
+	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
 .dollar {
@@ -222,7 +239,7 @@ input[type="number"] {
 	.tip .buttons {
 		justify-content: space-between;
 	}
-	.tip button {
+	.tip .percent {
 		width: 47%;
 	}
 	#left {
